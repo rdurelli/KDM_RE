@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="JrubyEclipsePlugin"
+            name="Jruby Eclipse">
+      </category>
+      <view
+            category="JrubyEclipsePlugin"
+            class="com.restphone.jrubyeclipse.RubyOutputView"
+            icon="icons/sample.gif"
+            id="com.restphone.jrubyeclipse.RubyOutputView2"
+            name="Ruby Output">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+      <contexts
+            file="contexts.xml">
+      </contexts>
+      <contexts
+            file="contexts.xml">
+      </contexts>
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   
+   
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               id="com.restphone.jrubyeclipse.RubyOutputView2"
+               ratio="0.5"
+               relationship="right"
+               relative="org.eclipse.ui.views.TaskList">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="TestePlugin.contribution1"
+            objectClass="org.eclipse.jdt.core.IJavaProject">
+       <menu
+             icon="icons/Binoculars.png"
+             id="TestePlugin.menu2"
+             label="Knowledge Discovery"
+             path="additions">
+            <groupMarker
+                  name="content">
+            </groupMarker>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+       <action
+             class="com.br.actions.IdentifySQL"
+             enablesFor="1"
+             icon="icons/1378475458_stock_data-edit-sql-query.png"
+             id="com.actions.newAction"
+             label="Discovery SQL MODEL"
+             menubarPath="TestePlugin.menu2/content">
+     </action>
+       <action
+             class="com.br.actions.IdentifyJavaModel"
+             enablesFor="1"
+             icon="icons/1378475440_Java.png"
+             id="com.actions.newActionJava"
+             label="Discovery Java MODEL"
+             menubarPath="TestePlugin.menu2/content">
+       </action>
+       <action
+             class="com.br.actions.IdentifyKDMModel"
+             enablesFor="1"
+             icon="icons/4328.png"
+             id="com.actions.newActionKDMModel"
+             label="Discovery KDM MODEL"
+             menubarPath="TestePlugin.menu2/content">
+       </action>
+       <action
+             class="com.br.actions.IdentifyKDMSource"
+             enablesFor="1"
+             icon="icons/4328.png"
+             id="com.actions.newActionKDMSOURCE"
+             label="Discovery KDM SOURCE"
+             menubarPath="TestePlugin.menu2/content">
+       </action>
+      </objectContribution>
+   </extension>
+	<extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="TestePlugin.contribution2"
+            nameFilter="*.sqlmodel"
+            objectClass="org.eclipse.core.resources.IResource">
+         <menu
+               icon="icons/4188.png"
+               id="TestePlugin.menu2"
+               label="TransformSQLModel2KDMData"
+               path="additions">
+            <groupMarker
+                  name="content">
+            </groupMarker>
+            <separator
+                  name="additions">
+            </separator>
+         </menu>
+         <action
+               class="com.br.actions.IdentifyKDMData"
+               enablesFor="1"
+               icon="icons/1378475289_54.png"
+               id="TestePlugin.newAction"
+               label=" KDM Data"
+               menubarPath="TestePlugin.menu2/content">
+         </action>
+      </objectContribution>
+   </extension>
+ <extension
+       point="org.eclipse.ui.popupMenus">
+    <objectContribution
+          adaptable="false"
+          id="TestePlugin.contribution3"
+          objectClass="org.eclipse.jdt.core.IJavaProject">
+       <menu
+             icon="icons/5124.png"
+             id="TestePlugin.menu3"
+             label="Modernization"
+             path="additions">
+          <groupMarker
+                name="content">
+          </groupMarker>
+          <separator
+                name="additions">
+          </separator>
+       </menu>
+       <action
+             class="com.br.actions.ReestructuringToDAO"
+             enablesFor="1"
+             icon="icons/4416.png"
+             id="com.actions.newActionReestructuring"
+             label="Modernize2DAO"
+             menubarPath="TestePlugin.menu3/content">
+       </action>
+       <action
+             class="com.br.actions.ApplyAllRefactoringToTheSourceCode"
+             enablesFor="1"
+             id="com.actions.newActionRefactoring"
+             label="Apply Refactoring To Source-Code"
+             menubarPath="TestePlugin.menu3/content">
+       </action>
+    </objectContribution>
+ </extension>
+ <extension
+       point="org.eclipse.ui.views">
+    <view
+          class="com.br.gui.refactoring.RefactoringNameClass"
+          id="org.eclipse.wb.swt.RefactoringNameClass"
+          name="name"
+          restorable="true">
+    </view>
+    <view
+          class="com.br.gui.refactoring.RenameClassUnit"
+          id="com.br.gui.refactoring.RenameClassUnit"
+          name="Rename ClassUnit">
+    </view>
+    <view
+          class="com.br.gui.refactoring.TraceLog"
+          id="com.br.gui.refactoring.TraceLog"
+          name="Changes Log">
+    </view>
+    <view
+          class="com.br.tests.TesteTablejFace"
+          id="com.br.tests.TesteTablejFace"
+          name="New ViewPart">
+    </view>
+    <view
+          class="com.br.gui.refactoring.BadSmellView"
+          id="com.br.gui.refactoring.BadSmellView"
+          name="Bad SmellView">
+    </view>
+ </extension>
+ <extension
+       point="org.eclipse.ui.popupMenus">
+    <objectContribution
+          adaptable="false"
+          id="TestePlugin.contribution3"
+          objectClass="org.eclipse.ui.IEditorInput">
+       <menu
+             icon="icons/5124.png"
+             id="TestePlugin.menu4"
+             label="Refactoring KDM"
+             path="additions">
+          <groupMarker
+                name="content">
+          </groupMarker>
+          <separator
+                name="additions">
+          </separator>
+       </menu>
+       <action
+             class="com.br.actions.ActionRefactoringRenameClass"
+             enablesFor="1"
+             icon="icons/4416.png"
+             id="com.actions.newActionRefactoringName"
+             label="Rename KDMEntity"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <menu
+             icon="icons/1389726303_question-type-one-correct.png"
+             id="TestePlugin.menu5"
+             label="Show UML Diagram"
+             path="additions">
+          <groupMarker
+                name="content">
+          </groupMarker>
+          <separator
+                name="additions">
+          </separator>
+       </menu>
+       <action
+             class="com.br.actions.GenerateUMLDiagramBasedOnKDM"
+             icon="icons/1389726397_sprocket_dark.png"
+             id="com.actions.newActionExtractClass"
+             label="Generate UML Diagram based on KDM"
+             menubarPath="TestePlugin.menu5/content">
+       </action>
+       <action
+             class="com.br.actions.GETUMLTeste"
+             id="com.actions.newActionUML"
+             label="TESTE UML Get"
+             menubarPath="TestePlugin.menu5/content">
+       </action>
+       <action
+             class="com.br.actions.PullUpFieldClass"
+             id="com.actions.newActionPullUpField"
+             label="Move Method"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <action
+             class="com.br.actions.PullUpFieldClass"
+             id="com.actions.newActionPullUpField"
+             label="Move Field"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <action
+             class="com.br.actions.ExtractClass"
+             id="com.actions.newActionExtractClass"
+             label="Extract Class"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <action
+             class="com.br.actions.InLineClass"
+             id="com.actions.newActionPullUpField"
+             label="InLine Class"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <action
+             class="com.br.actions.EncapsulateFieldClass"
+             id="com.actions.newActionEncapsulateField"
+             label="Encapsulate Field"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <action
+             class="com.br.actions.PullUpFieldClass"
+             id="com.actions.newActionPullUpField"
+             label="Replace Data value With Object"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <action
+             class="com.br.actions.PullUpFieldClass"
+             id="com.actions.newActionPullUpField"
+             label="Replace Type Code With Class"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <action
+             class="com.br.actions.PullUpFieldClass"
+             id="com.actions.newActionPullUpField"
+             label="Replace Type Code With SubClass"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <action
+             class="com.br.actions.PullUpFieldClass"
+             id="com.actions.newActionPullUpField"
+             label="Replace Type Code With State/Strategy"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <action
+             class="com.br.actions.PullUpFieldClass"
+             id="com.actions.newActionPullUpField"
+             label="Collapse Hierarchy"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <action
+             class="com.br.actions.ExtractSuperClass"
+             id="com.actions.newActionExtractSuperClass"
+             label="Extract Super Class"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <action
+             class="com.br.actions.PullUpFieldClass"
+             id="com.actions.newActionPullUpField"
+             label="Extract SubClass"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <action
+             class="com.br.actions.PullDownMethodClass"
+             id="com.actions.newActionPullUpMethod"
+             label="Pull Down Method"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <action
+             class="com.br.actions.PullDownFieldClass"
+             id="com.actions.newActionPullDownField"
+             label="Pull Down Field"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <action
+             class="com.br.actions.PullUpMethodClass"
+             id="com.actions.newActionPullUpMethod"
+             label="Pull Up Method"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <action
+             class="com.br.actions.PullUpFieldClass"
+             id="com.actions.newActionPullUpField"
+             label="Pull Up Field"
+             menubarPath="TestePlugin.menu4/content">
+       </action>
+       <menu
+             id="TestePlugin.menu7"
+             label="Process catalog of Refactoring">
+          <groupMarker
+                name="content">
+          </groupMarker>
+          <separator
+                name="additions">
+          </separator>
+       </menu>
+       <action
+             class="com.br.refactoring.dsl.readingdata.action.ReadDSLByView"
+             id="com.actions.newActionPullUpFieldTest"
+             label="Apply Refactoring"
+             menubarPath="TestePlugin.menu7/content">
+       </action>
+    </objectContribution>
+ </extension>
+ <extension
+       point="org.eclipse.ui.popupMenus">
+    <objectContribution
+          adaptable="false"
+          id="TestePlugin.contribution5"
+          nameFilter="MODELS_PIM_modificado"
+          objectClass="org.eclipse.core.resources.IFolder">
+       <menu
+             icon="icons/Binoculars.png"
+             id="TestePlugin.menu2"
+             label="Versions"
+             path="additions">
+          <groupMarker
+                name="content">
+          </groupMarker>
+          <separator
+                name="additions">
+          </separator>
+       </menu>
+       <action
+             class="com.br.actions.IdentifySQL"
+             enablesFor="1"
+             id="com.actions.newAction"
+             label="Create a child version"
+             menubarPath="TestePlugin.menu2/content">
+       </action>
+       <action
+             class="com.br.actions.IdentifySQL"
+             enablesFor="1"
+             id="com.actions.newActionJava"
+             label="Delete version"
+             menubarPath="TestePlugin.menu2/content">
+       </action>
+       <action
+             class="com.br.actions.IdentifyJavaModel"
+             enablesFor="1"
+             id="com.actions.newActionKDMModel"
+             label="List of changes"
+             menubarPath="TestePlugin.menu2/content">
+       </action>
+    </objectContribution>
+ </extension>
+ <extension
+       point="org.eclipse.ui.popupMenus">
+    <objectContribution
+          adaptable="false"
+          id="TestePlugin.contribution6"
+          objectClass="org.eclipse.jdt.core.IJavaProject">
+       <action
+             class="com.br.actions.InitializeFileRefactoring"
+             enablesFor="1"
+             icon="icons/1401835565_list.png"
+             id="com.actions.newAction"
+             label="Initialize Refactoring"
+             menubarPath="TestePlugin.menu2/content">
+       </action>
+    </objectContribution>
+ </extension>
+ <extension
+       point="org.eclipse.ui.popupMenus">
+    <objectContribution
+          adaptable="false"
+          id="DSLReading.contribution"
+          nameFilter="catalogueRefactoring.refactoring"
+          objectClass="org.eclipse.core.resources.IResource">
+       <menu
+             id="com.br.refactoring.dsl.readingData.menu1"
+             label="Process catalog of Refactoring">
+          <groupMarker
+                name="content">
+          </groupMarker>
+          <separator
+                name="additions">
+          </separator>
+       </menu>
+       <action
+             class="com.br.refactoring.dsl.readingdata.action.ReadDSL"
+             id="com.br.refactoring.dsl.readingData.action1"
+             label="Apply Refactorings"
+             menubarPath="com.br.refactoring.dsl.readingData.menu1/content">
+       </action>
+    </objectContribution>
+ </extension>
+</plugin>
